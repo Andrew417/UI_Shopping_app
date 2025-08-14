@@ -92,9 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        onPressed: () {
-                          // Forgot password action
-                        },
+                        onPressed: () {},
                         child: Text(
                           'Forgot Password?',
                           style: TextStyle(
@@ -122,13 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                       Text('Don\'t have an account?'),
                       TextButton(
                         onPressed: () {
-                          // navigator
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const SignupPage(),
-                            ),
-                          );
+                          pushwithReplacment(context, const SignupPage());
                         },
                         child: Text(
                           'Sign up',

@@ -5,6 +5,7 @@ import 'package:nectar_ui/compnents/inputs/text_input.dart';
 import 'package:nectar_ui/core/constants/app_assets.dart';
 import 'package:nectar_ui/core/extenstions/navigation.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
+import 'package:nectar_ui/feature/auth/page/login_page.dart';
 import 'package:nectar_ui/feature/home/page/home_screen.dart';
 
 class SignupPage extends StatefulWidget {
@@ -84,15 +85,10 @@ class _SignupPageState extends State<SignupPage> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {
-                          // Navigate to Terms of Service page
-                        },
+                        onPressed: () {},
                         style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero, // Removes extra padding
-                          minimumSize: Size(
-                            0,
-                            0,
-                          ), // Avoids button height issues
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(0, 0),
                         ),
                         child: Text(
                           'Terms of Service',
@@ -135,7 +131,7 @@ class _SignupPageState extends State<SignupPage> {
                   mainBtn(
                     text: 'Sign Up',
                     onPressed: () {
-                      pushwithReplacment(context, HomeScreen());
+                      pushwithReplacment(context, const HomeScreen());
                     },
                   ),
                   SizedBox(height: 5),
@@ -145,7 +141,7 @@ class _SignupPageState extends State<SignupPage> {
                       Text('Already have an account?'),
                       TextButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          pushwithReplacment(context, const LoginPage());
                         },
                         child: Text(
                           'Log in',
