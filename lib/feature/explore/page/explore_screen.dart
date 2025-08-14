@@ -20,7 +20,6 @@ class ExploreScreen extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.white,
-        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
