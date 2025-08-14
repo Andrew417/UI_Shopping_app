@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/feature/home/model/order_model.dart';
-import 'package:nectar_ui/feature/home/widgets/exclusive_orders.dart';
+import 'package:nectar_ui/feature/home/widgets/exclusive_orders.dart'; // same UI widget reused
 
-class ExclusiveOrdersBuilder extends StatelessWidget {
-  const ExclusiveOrdersBuilder({super.key});
+class BestSellingOrdersBuilder extends StatelessWidget {
+  const BestSellingOrdersBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +12,13 @@ class ExclusiveOrdersBuilder extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          var product = products[index];
-          return ExclusiveOrdersUI(model: product);
+          var product = bestSellingProducts[index];
+          return ExclusiveOrdersUI(model: product); 
         },
         separatorBuilder: (context, index) {
-          return SizedBox(width: 10);
+          return const SizedBox(width: 10);
         },
-        itemCount: products.length,
+        itemCount: bestSellingProducts.length,
       ),
     );
   }

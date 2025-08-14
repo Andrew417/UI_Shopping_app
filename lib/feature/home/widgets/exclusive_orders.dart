@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/feature/home/model/order_model.dart';
 
-class ExclusiveOrders extends StatelessWidget {
-  const ExclusiveOrders({super.key, required this.model});
+class ExclusiveOrdersUI extends StatelessWidget {
+  const ExclusiveOrdersUI({super.key, required this.model});
 
   final ProductModel model;
 

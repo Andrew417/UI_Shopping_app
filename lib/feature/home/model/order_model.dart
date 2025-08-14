@@ -56,3 +56,30 @@ List<ProductModel> products = [
     size: '1',
   ),
 ];
+
+List<ProductModel> bestSellingProducts = [
+  ProductModel(
+    name: 'ginger',
+    image: 'assets/images/ginger.svg',
+    price: '9.99',
+    size: '1',
+  ),
+  ProductModel(
+    name: 'pepper',
+    image: 'assets/images/pepper.svg',
+    price: '12.99',
+    size: '1',
+  ),
+  ProductModel(
+    name: 'ginger',
+    image: 'assets/images/ginger.svg',
+    price: '9.99',
+    size: '1',
+  ),
+  ProductModel(
+    name: 'pepper',
+    image: 'assets/images/pepper.svg',
+    price: '12.99',
+    size: '1',
+  ),
+];
