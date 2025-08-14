@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/core/utils/app_theme.dart';
-import 'package:nectar_ui/feature/mycart/page/mycart_screen.dart';
+import 'package:nectar_ui/feature/favuoriteScreen/page/favScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppThemes.lightTheme,
-      home: MycartScreen(),
+      home: FavouriteScreen(),
     );
   }
 }
