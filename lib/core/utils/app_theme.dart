@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:nectar_ui/core/utils/app_colors.dart';
+
+class AppThemes {
+  static ThemeData lightTheme = ThemeData(
+    scaffoldBackgroundColor: Colors.white,
+    appBarTheme: AppBarTheme(
+      surfaceTintColor: Colors.transparent,
+      backgroundColor: Colors.white,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      labelStyle: TextStyle(
+        color: AppColors.grey,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      ),
+      enabledBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: AppColors.grey),
+      ),
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: AppColors.grey),
+      ),
+      errorBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: Colors.red),
+      ),
+      focusedErrorBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: Colors.red),
+      ),
+      disabledBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: AppColors.grey),
+      ),
+    ),
+  );
+}
