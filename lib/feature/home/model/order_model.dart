@@ -15,44 +15,38 @@ class ProductModel {
 List<ProductModel> products = [
   ProductModel(
     name: 'Banana',
-    image: 'assets/images/bananasvg.svg',
+    image: 'assets/images/banana.png',
     price: '9.99',
     size: '1',
   ),
   ProductModel(
     name: 'Apples',
-    image: 'assets/images/applesvg.svg',
+    image: 'assets/images/apple.png',
     price: '12.99',
+    size: '1',
+  ),
+  ProductModel(
+    name: 'Banana',
+    image: 'assets/images/banana.png',
+    price: '9.99',
     size: '1',
   ),
   ProductModel(
     name: 'Apples',
-    image: 'assets/images/applesvg.svg',
-    price: '7.99',
-    size: '1',
-  ),
-  ProductModel(
-    name: 'Banana',
-    image: 'assets/images/bananasvg.svg',
-    price: '9.99',
-    size: '1',
-  ),
-  ProductModel(
-    name: 'Banana',
-    image: 'assets/images/bananasvg.svg',
+    image: 'assets/images/apple.png',
     price: '12.99',
     size: '1',
   ),
   ProductModel(
     name: 'Banana',
-    image: 'assets/images/bananasvg.svg',
-    price: '7.99',
+    image: 'assets/images/banana.png',
+    price: '9.99',
     size: '1',
   ),
   ProductModel(
-    name: 'Banana',
-    image: 'assets/images/bananasvg.svg',
-    price: '9.99',
+    name: 'Apples',
+    image: 'assets/images/apple.png',
+    price: '12.99',
     size: '1',
   ),
 ];
@@ -60,25 +54,25 @@ List<ProductModel> products = [
 List<ProductModel> bestSellingProducts = [
   ProductModel(
     name: 'ginger',
-    image: 'assets/images/ginger.svg',
+    image: 'assets/images/ginger.png',
     price: '9.99',
     size: '1',
   ),
   ProductModel(
     name: 'pepper',
-    image: 'assets/images/pepper.svg',
+    image: 'assets/images/pepper.png',
     price: '12.99',
     size: '1',
   ),
   ProductModel(
     name: 'ginger',
-    image: 'assets/images/ginger.svg',
+    image: 'assets/images/ginger.png',
     price: '9.99',
     size: '1',
   ),
   ProductModel(
     name: 'pepper',
-    image: 'assets/images/pepper.svg',
+    image: 'assets/images/pepper.png',
     price: '12.99',
     size: '1',
   ),

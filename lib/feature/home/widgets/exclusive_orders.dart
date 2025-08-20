@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/feature/home/model/order_model.dart';
 
@@ -21,7 +20,7 @@ class ExclusiveOrdersUI extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(child: SvgPicture.asset(model.image, width: 150)),
+            Expanded(child: Image.asset(model.image, width: 150)),
             SizedBox(height: 15),
             Text(
               model.name,

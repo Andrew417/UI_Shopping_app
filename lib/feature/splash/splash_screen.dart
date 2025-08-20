@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nectar_ui/core/constants/app_assets.dart';
 import 'package:nectar_ui/core/extenstions/navigation.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
-import 'package:nectar_ui/feature/auth/page/location_page.dart';
+import 'package:nectar_ui/feature/auth/page/welcome.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      pushwithReplacment(context, const LocationPage());
+      pushwithReplacment(context, const Welcome());
     });
     super.initState();
   }
