@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nectar_ui/feature/explore/widgets/cateogries.dart';
 
 class CategoriesBuilder extends StatelessWidget {
@@ -39,7 +38,7 @@ class CategoriesBuilder extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(category.image, height: 70),
+              Image.asset(category.image, height: 70),
               const SizedBox(height: 8),
               Text(
                 category.title,
