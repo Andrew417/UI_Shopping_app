@@ -19,6 +19,7 @@ class Welcome extends StatelessWidget {
             width: double.infinity,
             fit: BoxFit.cover,
           ),
+
           Positioned(
             bottom: 80,
             left: 30,

@@ -72,62 +72,42 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  Wrap(
-                    alignment: WrapAlignment.start,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      Text(
-                        'By continuing you agree to our ',
-                        style: TextStyle(
-                          color: AppColors.grey,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'By continuing you agree to our ',
+                          style: TextStyle(color: AppColors.grey),
                         ),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                          minimumSize: Size(0, 0),
-                        ),
-                        child: Text(
-                          'Terms of Service',
-                          style: TextStyle(
-                            color: AppColors.primaryColor,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Text(
+                              'Terms of Service ',
+                              style: TextStyle(color: AppColors.primaryColor),
+                            ),
                           ),
                         ),
-                      ),
-                      Text(
-                        ' and ',
-                        style: TextStyle(
-                          color: AppColors.grey,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
+                        TextSpan(
+                          text: 'and ',
+                          style: TextStyle(color: AppColors.grey),
                         ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          // Navigate to Privacy Policy page
-                        },
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                          minimumSize: Size(0, 0),
-                        ),
-                        child: Text(
-                          'Privacy Policy.',
-                          style: TextStyle(
-                            color: AppColors.primaryColor,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Text(
+                              'Privacy Policy ',
+                              style: TextStyle(color: AppColors.primaryColor),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
 
-                  SizedBox(height: 30),
+                  SizedBox(height: 15),
                   mainBtn(
                     text: 'Sign Up',
                     onPressed: () {
