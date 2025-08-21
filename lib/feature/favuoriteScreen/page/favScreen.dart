@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:nectar_ui/compnents/button/bottom_bar.dart';
 import 'package:nectar_ui/compnents/button/main_btn.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/feature/favuoriteScreen/model/favouritsList.dart';
@@ -61,7 +59,7 @@ class FavouriteScreen extends StatelessWidget {
                           SizedBox(
                             width: 90,
                             height: 90,
-                            child: SvgPicture.asset(item.image),
+                            child: Image.asset(item.image),
                           ),
                           const SizedBox(width: 8),
                           Expanded(
