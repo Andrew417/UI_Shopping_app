@@ -1,157 +1,97 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:nectar_ui/core/utils/app_colors.dart';
+import 'package:nectar_ui/feature/account/page/account.dart';
+import 'package:nectar_ui/feature/explore/page/explore_screen.dart';
+import 'package:nectar_ui/feature/favuoriteScreen/page/favScreen.dart';
+import 'package:nectar_ui/feature/home/page/home_screen.dart';
+import 'package:nectar_ui/feature/mycart/page/mycart_screen.dart';
 
-class BottomBar extends StatelessWidget {
-  final bool shop;
-  final bool explore;
-  final bool cart;
-  final bool favourite;
-  final bool account;
-
-  const BottomBar({
-    super.key,
-    this.shop = false,
-    this.explore = false,
-    this.cart = false,
-    this.favourite = false,
-    this.account = false,
-  });
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int _currentIndex = 0;
+  final _pages = [
+    HomeScreen(),
+    ExploreScreen(),
+    MycartScreen(),
+    FavouriteScreen(),
+    AccountScreen(),
+  ];
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 10,
-            offset: Offset(0, -3),
+    return Scaffold(
+      body: _pages[_currentIndex],
+
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+
+        selectedItemColor: AppColors.primaryColor,
+        unselectedItemColor: Colors.black,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/images/shopSvg.svg',
+              colorFilter: ColorFilter.mode(
+                _currentIndex == 0 ? AppColors.primaryColor : Colors.black,
+                BlendMode.srcIn,
+              ),
+            ),
+            label: 'Shop',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/images/exploreSvg.svg',
+              colorFilter: ColorFilter.mode(
+                _currentIndex == 1 ? AppColors.primaryColor : Colors.black,
+                BlendMode.srcIn,
+              ),
+            ),
+
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/images/cartSvg.svg',
+              colorFilter: ColorFilter.mode(
+                _currentIndex == 2 ? AppColors.primaryColor : Colors.black,
+                BlendMode.srcIn,
+              ),
+            ),
+            label: 'Cart',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/images/favSvg.svg',
+              colorFilter: ColorFilter.mode(
+                _currentIndex == 3 ? AppColors.primaryColor : Colors.black,
+                BlendMode.srcIn,
+              ),
+            ),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/images/accountSvg.svg',
+              colorFilter: ColorFilter.mode(
+                _currentIndex == 4 ? AppColors.primaryColor : Colors.black,
+                BlendMode.srcIn,
+              ),
+            ),
+            label: 'Account',
           ),
         ],
-      ),
-
-      child: ClipRRect(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        ),
-        child: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.green,
-          unselectedItemColor: Colors.black,
-          items: [
-            BottomNavigationBarItem(
-              icon: InkWell(
-                onTap: () {},
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.store_outlined,
-                      color: shop ? Colors.green : Colors.black,
-                    ),
-                    Text(
-                      "Shop",
-                      style: TextStyle(
-                        color: shop ? Colors.green : Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: InkWell(
-                onTap: () {},
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.search_outlined,
-                      color: explore ? Colors.green : Colors.black,
-                    ),
-                    Text(
-                      "Explore",
-                      style: TextStyle(
-                        color: explore ? Colors.green : Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: InkWell(
-                onTap: () {},
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.shopping_cart_outlined,
-                      color: cart ? Colors.green : Colors.black,
-                    ),
-                    Text(
-                      "Cart",
-                      style: TextStyle(
-                        color: cart ? Colors.green : Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: InkWell(
-                onTap: () {},
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.favorite_border,
-                      color: favourite ? Colors.green : Colors.black,
-                    ),
-                    Text(
-                      "Favourite",
-                      style: TextStyle(
-                        color: favourite ? Colors.green : Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: InkWell(
-                onTap: () {},
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.person_2_outlined,
-                      color: account ? Colors.green : Colors.black,
-                    ),
-                    Text(
-                      "Account",
-                      style: TextStyle(
-                        color: account ? Colors.green : Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              label: "",
-            ),
-          ],
-        ),
       ),
     );
   }

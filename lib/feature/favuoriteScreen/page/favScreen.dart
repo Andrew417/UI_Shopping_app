@@ -126,8 +126,6 @@ class FavouriteScreen extends StatelessWidget {
           ),
         ],
       ),
-
-      bottomNavigationBar: const BottomBar(favourite: true),
     );
   }
 }

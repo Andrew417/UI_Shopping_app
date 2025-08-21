@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_ui/feature/mycart/model/CartItemModel.dart';
+import 'package:nectar_ui/feature/home/model/order_model.dart';
 import 'package:nectar_ui/feature/mycart/widgets/my_cart_list_ui.dart';
 
-class myCartBuilder extends StatelessWidget {
-  const myCartBuilder({
-    super.key,
-  });
+class MyCartBuilder extends StatefulWidget {
+  const MyCartBuilder({super.key});
 
+  @override
+  State<MyCartBuilder> createState() => _MyCartBuilderState();
+}
+
+class _MyCartBuilderState extends State<MyCartBuilder> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: cartItems.length,
+      itemCount: cart.length,
       itemBuilder: (context, index) {
-        var item = cartItems[index];
-        return myCartListUI(item: item);
+        var item = cart[index];
+        return MyCartListUI(
+          item: item,
+          onRemove: () {
+            setState(() {
+              cart.removeAt(index); 
+            });
+          },
+        );
       },
     );
   }

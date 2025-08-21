@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_ui/compnents/button/bottom_bar.dart';
 import 'package:nectar_ui/compnents/button/main_btn.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/feature/mycart/widgets/my_cart_builder.dart';
@@ -23,15 +22,13 @@ class MycartScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(10),
+          preferredSize: const Size.fromHeight(1),
           child: Container(color: Colors.grey.shade300, height: 1),
         ),
       ),
-
       body: Stack(
         children: [
-          myCartBuilder(),
-
+          MyCartBuilder(),
           Positioned(
             left: 16,
             right: 16,
@@ -40,8 +37,6 @@ class MycartScreen extends StatelessWidget {
           ),
         ],
       ),
-
-      bottomNavigationBar: BottomBar(cart: true),
     );
   }
 }

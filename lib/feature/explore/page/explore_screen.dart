@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_ui/compnents/button/bottom_bar.dart';
 import 'package:nectar_ui/compnents/inputs/search_bar.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/feature/explore/widgets/categories_builder.dart';
@@ -33,7 +32,6 @@ class ExploreScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const BottomBar(explore: true),
     );
   }
 }

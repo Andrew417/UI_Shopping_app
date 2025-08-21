@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nectar_ui/compnents/button/bottom_bar.dart';
 import 'package:nectar_ui/compnents/button/main_btn.dart';
 import 'package:nectar_ui/compnents/inputs/text_input.dart';
 import 'package:nectar_ui/core/constants/app_assets.dart';
 import 'package:nectar_ui/core/extenstions/navigation.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/feature/auth/page/signup_page.dart';
-import 'package:nectar_ui/feature/home/page/home_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                     text: 'Log In',
                     onPressed: () {
                       if (formKey.currentState?.validate() ?? false) {
-                        pushwithReplacment(context, const HomeScreen());
+                        pushwithReplacment(context, const MainPage());
                       }
                     },
                   ),

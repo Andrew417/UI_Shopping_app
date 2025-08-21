@@ -161,7 +161,6 @@ class AccountScreen extends StatelessWidget {
         ],
       ),
 
-      bottomNavigationBar: const BottomBar(account: true),
     );
   }
 }

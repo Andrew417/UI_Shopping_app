@@ -1,40 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:nectar_ui/feature/mycart/model/CartItemModel.dart';
+import 'package:nectar_ui/feature/home/model/order_model.dart';
 
-class myCartListUI extends StatelessWidget {
-  const myCartListUI({
-    super.key,
-    required this.item,
-  });
+class MyCartListUI extends StatefulWidget {
+  const MyCartListUI({super.key, required this.item, required this.onRemove});
 
-  final CartItemModel item;
+  final ProductModel item;
+  final VoidCallback onRemove;
 
+  @override
+  State<MyCartListUI> createState() => _MyCartListUIState();
+}
+
+class _MyCartListUIState extends State<MyCartListUI> {
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 160,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 1,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 1),
       decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(color: Colors.grey.shade300),
-        ),
+        border: Border(bottom: BorderSide(color: Colors.grey.shade300)),
       ),
       child: Stack(
         children: [
           Row(
             children: [
-              SizedBox(
-                width: 90,
-                height: 90,
-                child: SvgPicture.asset(
-                  item.image,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
                   width: 90,
                   height: 90,
-                  fit: BoxFit.contain,
+                  child: Image.asset(
+                    widget.item.image,
+                    width: 90,
+                    height: 90,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
               const SizedBox(width: 8),
@@ -44,7 +44,7 @@ class myCartListUI extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      item.name,
+                      widget.item.name,
                       style: const TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 16,
@@ -55,7 +55,7 @@ class myCartListUI extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          "Size: ${item.size}, ",
+                          "Size: ${widget.item.size}, ",
                           style: const TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
@@ -63,7 +63,7 @@ class myCartListUI extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "\$${item.price.toStringAsFixed(2)}",
+                          "\$${widget.item.price}",
                           style: const TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
@@ -76,7 +76,13 @@ class myCartListUI extends StatelessWidget {
                     Row(
                       children: [
                         FloatingActionButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            if (widget.item.amount > 1) {
+                              setState(() {
+                                widget.item.amount--;
+                              });
+                            }
+                          },
                           mini: true,
                           elevation: 0,
                           backgroundColor: Colors.white,
@@ -87,21 +93,20 @@ class myCartListUI extends StatelessWidget {
                               width: 1,
                             ),
                           ),
-                          child: const Icon(
-                            Icons.remove,
-                            color: Colors.green,
-                          ),
+                          child: const Icon(Icons.remove, color: Colors.green),
                         ),
                         const SizedBox(width: 10),
                         Text(
-                          item.quantity.toString(),
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          widget.item.amount.toString(),
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(width: 10),
                         FloatingActionButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              widget.item.amount++;
+                            });
+                          },
                           mini: true,
                           elevation: 0,
                           backgroundColor: Colors.white,
@@ -112,14 +117,11 @@ class myCartListUI extends StatelessWidget {
                               width: 1,
                             ),
                           ),
-                          child: const Icon(
-                            Icons.add,
-                            color: Colors.green,
-                          ),
+                          child: const Icon(Icons.add, color: Colors.green),
                         ),
                         const Spacer(),
                         Text(
-                          "\$${item.totalPrice.toStringAsFixed(2)}",
+                          "\$${double.parse(widget.item.price) * widget.item.amount}",
                           style: const TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18,
@@ -137,13 +139,9 @@ class myCartListUI extends StatelessWidget {
             top: 0,
             right: -10,
             child: IconButton(
-              icon: const Icon(
-                Icons.close,
-                size: 20,
-                color: Colors.grey,
-              ),
+              icon: const Icon(Icons.close, size: 20, color: Colors.grey),
               padding: EdgeInsets.zero,
-              onPressed: () {},
+              onPressed: widget.onRemove,
             ),
           ),
         ],
