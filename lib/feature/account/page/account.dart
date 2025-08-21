@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:nectar_ui/compnents/button/bottom_bar.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -46,8 +44,8 @@ class AccountScreen extends StatelessWidget {
                         backgroundColor: Colors.white,
                         child: Padding(
                           padding: const EdgeInsets.all(6.0),
-                          child: SvgPicture.asset(
-                            'assets/images/accountpic.svg',
+                          child: Image.asset(
+                            'assets/images/accountpng.png',
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -160,7 +158,6 @@ class AccountScreen extends StatelessWidget {
           ),
         ],
       ),
-
     );
   }
 }
