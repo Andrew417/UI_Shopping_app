@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/compnents/button/main_btn.dart';
-import 'package:nectar_ui/core/product%20details/checkout.dart';
+import 'package:nectar_ui/feature/product%20details/checkout.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/feature/home/model/order_model.dart';
 import 'package:nectar_ui/feature/mycart/widgets/my_cart_builder.dart';

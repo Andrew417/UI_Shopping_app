@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/compnents/button/main_btn.dart';
-import 'package:nectar_ui/core/extenstions/navigation.dart';
 import 'package:nectar_ui/core/utils/app_colors.dart';
 import 'package:nectar_ui/feature/home/model/order_model.dart';
-import 'package:nectar_ui/feature/home/page/home_screen.dart';
+import 'package:nectar_ui/feature/product%20details/order_accepted.dart';
 
 class checkout extends StatefulWidget {
   const checkout({super.key, required this.model});
@@ -190,7 +189,11 @@ class _modalbottomsheetState extends State<checkout> {
           mainBtn(
             text: 'Place Order',
             onPressed: () {
-              pushwithReplacment(context, HomeScreen());
+              cart.clear();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => acceptedScreen()),
+              );
             },
           ),
         ],
